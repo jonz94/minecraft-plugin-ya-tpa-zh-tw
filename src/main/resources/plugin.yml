@@ -1,0 +1,19 @@
+name: YaTpaZhTw
+version: 0.0.1
+api-version: 1.16
+description: Yet Another TPA plugin (zh-TW version)
+depend: [ KotlinBase1dot5dot20 ]
+main: dev.jonz94.yatpazhtw.Plugin
+commands:
+  tpa:
+    description: Send teleport request to a player
+  tpaccept:
+    description: Accept teleport request
+  tpok:
+    description: Shorthand for /tpaccept
+  tpdeny:
+    description: Deny teleport request
+  tpno:
+    description: Shorthand for /tpdeny
+  tpcancel:
+    description: Cancel teleport request
