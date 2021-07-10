@@ -91,7 +91,7 @@ class Executor : CommandExecutor {
         if (source == null) {
             target.sendMessage("${ChatColor.RED}找不到發出此傳送請求的玩家，已自動忽略此請求")
         } else {
-            server.dispatchCommand(sender, "tp ${source.name} ${target.name}")
+            server.dispatchCommand(server.consoleSender, "tp ${source.name} ${target.name}")
             source.sendMessage("${ChatColor.RED}${target.name}${ChatColor.GOLD} 接受了你的傳送請求")
             target.sendMessage("${ChatColor.GOLD}你已接受 ${ChatColor.RED}${source.name}${ChatColor.GOLD} 的傳送請求")
         }
