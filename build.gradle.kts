@@ -22,6 +22,14 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc", "spigot-api", "1.16.5-R0.1-SNAPSHOT")
     compileOnly("org.jetbrains.kotlin", "kotlin-stdlib", "1.5.20")
+
+    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin", "kotlin-reflect", "1.5.20")
+    testImplementation("com.github.seeseemelk", "MockBukkit-v1.16", "1.5.0")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 idea {
