@@ -3,6 +3,7 @@ package dev.jonz94.yatpazhtw
 import be.seeseemelk.mockbukkit.MockBukkit
 import be.seeseemelk.mockbukkit.ServerMock
 import be.seeseemelk.mockbukkit.entity.PlayerMock
+import be.seeseemelk.mockbukkit.entity.PlayerMockFactory
 import org.bukkit.ChatColor
 import org.bukkit.Location
 import org.junit.jupiter.api.AfterEach
@@ -95,10 +96,9 @@ class ExecutorTests {
 
     @Test
     fun sourcePlayerWillGetErrorMessageIfTargetPlayerIsOffline() {
-        val source = server.addPlayer()
-
-        server.setOfflinePlayers(1)
-        val target = server.offlinePlayers[0]
+        val playerFactory = PlayerMockFactory(server)
+        val source = playerFactory.createRandomPlayer()
+        val target = playerFactory.createRandomOfflinePlayer()
 
         source.performCommand("tpa ${target.name}")
 
